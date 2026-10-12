@@ -101,6 +101,8 @@ p { text-wrap: pretty; }
 .hero h1 { font-size: clamp(42px, 10.5vw, 68px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.0; }
 .hero h1 .accent { color: var(--primary); display: block; }
 .lede { font-size: clamp(18px, 2.4vw, 21px); color: var(--text2); margin: 20px 0 28px; max-width: 34ch; }
+.free-badge { display: inline-flex; align-items: center; gap: 8px; margin: -12px 0 24px; padding: 6px 14px; border-radius: 999px; background: var(--tint); color: var(--primary); font-weight: 600; font-size: 15px; }
+.free-badge svg { width: 18px; height: 18px; flex: none; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .hero-art { position: relative; display: flex; justify-content: center; gap: 0; padding: 8px 0 24px; }
 .hero-art .phone { width: min(54vw, 280px); flex: none; }
