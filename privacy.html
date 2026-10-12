@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ToneHub Privacy Policy</title>
+<meta name="description" content="How the ToneHub guitar app handles your data, including its use of YouTube API Services.">
+<style>
+  :root { --bg:#F7F7F5; --text:#18181B; --muted:#4A4A50; --accent:#0B6E65; --rule:#E2E2DE; --todo:#FFF1C2; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#121214; --text:#F4F4F5; --muted:#C8C8CD; --accent:#5EE3D1; --rule:#2A2A2E; --todo:#4A3B00; } }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:40px 16px 64px; background:var(--bg); color:var(--text);
+         font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  main { max-width:680px; margin:0 auto; }
+  h1 { font-size:34px; margin:0 0 4px; letter-spacing:-0.02em; }
+  h2 { font-size:21px; margin:36px 0 8px; padding-top:20px; border-top:1px solid var(--rule); }
+  h3 { font-size:17px; margin:20px 0 4px; }
+  p, li { color:var(--muted); }
+  p { margin:0 0 12px; }
+  ul { padding-left:22px; margin:0 0 12px; }
+  a { color:var(--accent); overflow-wrap:anywhere; }
+  .meta { font-size:15px; margin-bottom:24px; }
+  .todo { background:var(--todo); color:var(--text); padding:1px 6px; border-radius:4px; }
+  nav { margin-bottom:24px; font-size:15px; }
+  footer { margin-top:40px; font-size:14px; color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <nav><a href="./">ToneHub</a></nav>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective October 11, 2026. Applies to the ToneHub app for iPhone and this website.</p>
+
+  <p>ToneHub is a free guitar app: it matches the tone of a song to your own amp and helps you practice the song. This policy explains what information ToneHub uses, where it goes, and the choices you have. You don't need an account to use ToneHub, and we don't sell your data, show ads, or use third-party analytics or tracking.</p>
+  <p>By using ToneHub you agree to this policy. If you don't agree, please don't use the app.</p>
+
+  <h2>Summary</h2>
+  <ul>
+    <li><strong>Your microphone and guitar sound stay on your iPhone.</strong> Audio is processed on the device, and song clips are kept in memory only.</li>
+    <li><strong>Video search uses YouTube API Services.</strong> Your search words go to our server and to YouTube. Videos play in YouTube's own embedded player.</li>
+    <li><strong>An account is optional.</strong> If you sign in to share tones, we store your account and the tones you publish.</li>
+    <li><strong>Song lookups</strong> send a song's title and artist to music services (Apple Music, MusicBrainz, GetSongBPM) to find details like key and tempo.</li>
+  </ul>
+
+  <h2>YouTube API Services</h2>
+  <p>ToneHub uses YouTube API Services to let you search for and watch YouTube videos of songs, guitar lessons and backing tracks inside the app. By using these features you agree to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. Google's handling of data is described in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> (<a href="http://www.google.com/policies/privacy">www.google.com/policies/privacy</a>).</p>
+  <h3>What we send and receive</h3>
+  <ul>
+    <li><strong>Search words.</strong> When you search for videos, or open a feature that looks up a video for a song (Tabs, Practice, Backing tracks), the search words (usually a song title and artist) are sent to ToneHub's server, which asks the YouTube Data API (<code>search.list</code> and <code>videos.list</code>) for matching public videos.</li>
+    <li><strong>What comes back</strong> is public video information only: video ID, title, channel name, thumbnail link, a short description, whether the video can be embedded, and its length.</li>
+    <li>ToneHub does <strong>not</strong> sign you in to Google or YouTube, does not request access to your Google or YouTube account, and does not access any private YouTube data about you.</li>
+  </ul>
+  <h3>How long we keep it</h3>
+  <ul>
+    <li><strong>On your iPhone</strong>, search results are cached for up to 3 days so the same search doesn't have to be repeated. Video matches for a song are kept for up to 25 days. iOS can clear this cache at any time, and deleting the app removes it.</li>
+    <li><strong>On our server</strong>, results for a search are kept in a shared cache for up to 7 days and are then refreshed. Anything older than 30 days is deleted automatically. The cache stores the search words and the public video information above. It does not store who searched.</li>
+  </ul>
+  <h3>Playing videos</h3>
+  <p>Videos play in YouTube's official embedded player (the IFrame Player API), with YouTube's branding and controls. ToneHub never downloads YouTube videos, never stores them for offline use, and never separates or changes their audio or video. The embedded player is provided by YouTube, which may set cookies or similar technology and collect information as described in the Google Privacy Policy.</p>
+
+  <h2>Microphone and audio</h2>
+  <ul>
+    <li>ToneHub uses the microphone or your audio interface to play your guitar through its amp models, to tune, and to listen to a song you want to match.</li>
+    <li>All of this audio is processed <strong>on your iPhone</strong>. Your guitar sound is never recorded to a server.</li>
+    <li>When you match a song, the clip is kept <strong>in memory only</strong>, while its result is open, so you can compare it. It is deleted when you leave that screen and is never saved to a file or uploaded.</li>
+    <li>To recognize a song, ToneHub uses Apple's ShazamKit, which sends Apple an audio signature (not a recording) of the clip. The recognized song stays on your device. See <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
+  </ul>
+
+  <h2>Apple Music and MusicKit</h2>
+  <ul>
+    <li>If you allow it, ToneHub uses Apple's MusicKit to search the Apple Music catalog, check whether you can play full songs, and play songs inside the app. iOS asks for your permission first, and you can change it any time in Settings.</li>
+    <li>These requests go directly from your device to Apple. ToneHub does not receive your Apple ID, your listening history or your library. Apple's handling is covered by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
+  </ul>
+
+  <h2>Optional account and shared tones</h2>
+  <p>You can use ToneHub without an account. To publish and vote on tones in the shared tone library, you can sign in with Apple or Google. The account is run on <a href="https://supabase.com/privacy">Supabase</a>, our hosting provider.</p>
+  <ul>
+    <li><strong>What we store:</strong> your sign-in identifier and the email address your sign-in provider shares (Sign in with Apple can share a private relay address), the handle you choose, and the tones, songs, sections, votes, reports and blocks you create.</li>
+    <li><strong>What others see:</strong> your handle and the tones you publish as public or unlisted.</li>
+    <li><strong>Deleting your account:</strong> in the app, go to Settings › Account › Delete account. This deletes your account, your profile and the tones, votes, reports and blocks you created. For Sign in with Apple, ToneHub also revokes its access at Apple.</li>
+  </ul>
+
+  <h2>Song details and amp models</h2>
+  <ul>
+    <li><strong>MusicBrainz</strong> (<a href="https://musicbrainz.org">musicbrainz.org</a>): song searches send the search words to identify recordings.</li>
+    <li><strong>GetSongBPM</strong> (<a href="https://getsongbpm.com">getsongbpm.com</a>): a song's title and artist are sent to look up its key and tempo.</li>
+    <li><strong>TONE3000</strong> (<a href="https://www.tone3000.com">tone3000.com</a>): if you connect a TONE3000 account under Play › More amps, you sign in on TONE3000's site, and ToneHub uses that sign-in only to list and download amp models you choose. Your TONE3000 password never passes through ToneHub. TONE3000's own privacy policy applies to that account.</li>
+  </ul>
+  <p>These lookups don't include your name, email or account details.</p>
+
+  <h2>Information our server handles to prevent abuse</h2>
+  <p>To keep the shared YouTube search fair and within YouTube's limits, ToneHub's server counts requests per network address and per installation of the app. The app sends a random installation ID that isn't linked to you or your account. The server stores only a one-way hash of the network address and of that ID, keeps the counts for up to 2 days, and uses them for rate limiting only. Like most web services, our hosting provider may also keep standard request logs for a short time for security.</p>
+
+  <h2>Data stored on your device</h2>
+  <p>ToneHub keeps your settings, gear, saved tones and caches (such as search results) on your iPhone. Deleting the app removes them.</p>
+
+  <h2>Sharing</h2>
+  <p>We share information only with the services described above, as needed to provide the feature you use, or when required by law. We do not sell or rent personal information, and we don't allow third parties to serve ads in ToneHub.</p>
+
+  <h2>Children</h2>
+  <p>ToneHub is not directed to children under 13, and we don't knowingly collect personal information from them.</p>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li>Turn off microphone or Apple Music access at any time in the iOS Settings app.</li>
+    <li>Use the app without an account, or delete your account in the app.</li>
+    <li>Ask us to delete any data related to you by contacting us at the address below.</li>
+  </ul>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, we'll update the effective date above, and for significant changes we'll tell you in the app.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or requests about privacy: <span class="todo">TODO: contact email</span></p>
+
+  <footer>See also: <a href="terms.html">Terms of Use</a> · <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a> · <a href="https://policies.google.com/privacy">Google Privacy Policy</a></footer>
+</main>
+</body>
+</html>
