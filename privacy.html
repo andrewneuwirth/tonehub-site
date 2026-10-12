@@ -41,9 +41,9 @@
   <div class="wrap">
     <p class="kicker">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective October 11, 2026. Applies to the ToneHub app for iPhone and this website.</p>
+    <p class="meta">Effective October 12, 2026. Applies to the ToneHub app for iPhone and this website.</p>
 
-    <p class="intro">ToneHub is a free guitar app: it matches the tone of a song to your own amp and helps you practice the song. This policy explains what information ToneHub uses, where it goes, and the choices you have. You don't need an account to use ToneHub, and we don't sell your data, show ads, or use third-party analytics or tracking.</p>
+    <p class="intro">ToneHub is a free guitar app: it matches the tone of a song to your own amp and helps you practice the song. This policy explains what information ToneHub uses, where it goes, and the choices you have. ToneHub requires an account, created with Sign in with Apple or Google, so your tones, gear and practice are saved and synced. We don't sell your data, show ads, or use third-party analytics or tracking.</p>
     <p>By using ToneHub you agree to this policy. If you don't agree, please don't use the app.</p>
 
     <nav class="toc" aria-label="On this page">
@@ -53,7 +53,7 @@
         <li><a href="#youtube">YouTube API Services</a></li>
         <li><a href="#microphone">Microphone and audio</a></li>
         <li><a href="#apple-music">Apple Music and MusicKit</a></li>
-        <li><a href="#account">Optional account and shared tones</a></li>
+        <li><a href="#account">Your account</a></li>
         <li><a href="#song-details">Song details and amp models</a></li>
         <li><a href="#abuse">Information our server handles to prevent abuse</a></li>
         <li><a href="#device">Data stored on your device</a></li>
@@ -69,7 +69,7 @@
     <ul>
       <li><strong>Your microphone and guitar sound stay on your iPhone.</strong> Audio is processed on the device, and song clips are kept in memory only.</li>
       <li><strong>Video search uses YouTube API Services.</strong> Your search words go to our server and to YouTube. Videos play in YouTube's own embedded player.</li>
-      <li><strong>An account is optional.</strong> If you sign in to share tones, we store your account and the tones you publish.</li>
+      <li><strong>An account is required.</strong> You sign in with Apple or Google. Your account stores your saved tones, gear, recent songs and practice so they sync and are backed up. You can delete it in the app at any time.</li>
       <li><strong>Song lookups</strong> send a song's title and artist to music services (Apple Music, MusicBrainz, GetSongBPM) to find details like key and tempo.</li>
     </ul>
 
@@ -96,7 +96,7 @@
       <li>ToneHub uses the microphone or your audio interface to play your guitar through its amp models, to tune, and to listen to a song you want to match.</li>
       <li>All of this audio is processed <strong>on your iPhone</strong>. Your guitar sound is never recorded to a server.</li>
       <li>When you match a song, the clip is kept <strong>in memory only</strong>, while its result is open, so you can compare it. It is deleted when you leave that screen and is never saved to a file or uploaded.</li>
-      <li>To recognize a song, ToneHub uses Apple's ShazamKit, which sends Apple an audio signature (not a recording) of the clip. The recognized song stays on your device. See <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
+      <li>To recognize a song, ToneHub uses Apple's ShazamKit, which sends Apple an audio signature (not a recording) of the clip. The recognized song is added to your recent songs, which are saved to your account. See <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
     </ul>
 
     <h2 id="apple-music">Apple Music and MusicKit</h2>
@@ -105,12 +105,14 @@
       <li>These requests go directly from your device to Apple. ToneHub does not receive your Apple ID, your listening history or your library. Apple's handling is covered by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
     </ul>
 
-    <h2 id="account">Optional account and shared tones</h2>
-    <p>You can use ToneHub without an account. To publish and vote on tones in the shared tone library, you can sign in with Apple or Google. The account is run on <a href="https://supabase.com/privacy">Supabase</a>, our hosting provider.</p>
+    <h2 id="account">Your account</h2>
+    <p>ToneHub requires an account. You create it at the end of setup with Sign in with Apple or Google. Your account is run on <a href="https://supabase.com/privacy">Supabase</a>, our hosting provider, and only you can read or change the data in it.</p>
     <ul>
-      <li><strong>What we store:</strong> your sign-in identifier and the email address your sign-in provider shares (Sign in with Apple can share a private relay address), the handle you choose, and the tones, songs, sections, votes, reports and blocks you create.</li>
-      <li><strong>What others see:</strong> your handle and the tones you publish as public or unlisted.</li>
-      <li><strong>Deleting your account:</strong> in the app, go to Settings › Account › Delete account. This deletes your account, your profile and the tones, votes, reports and blocks you created. For Sign in with Apple, ToneHub also revokes its access at Apple.</li>
+      <li><strong>What we store:</strong> your sign-in identifier and the email address your sign-in provider shares (Sign in with Apple can share a private relay address), plus what you keep in the app: your saved tones (song, amp settings, pedals and notes like tuning), your gear (guitar, amp, pedals and whether you use an audio interface), your recent songs, the keys you set for songs, and your practice history (time practiced per song or activity per day, drill tempos and your practice plan).</li>
+      <li><strong>Why:</strong> to sync this data between your devices and back it up, so it isn't lost if you change or reset your iPhone. ToneHub keeps a copy on your device and works offline; changes sync when you're back online.</li>
+      <li><strong>Shared tone library:</strong> if you choose a handle and publish tones, we also store the handle and the tones, songs, sections, votes, reports and blocks you create. Others see your handle and the tones you publish as public or unlisted.</li>
+      <li><strong>Deleting your account:</strong> in the app, go to Settings › Account › Delete account. This deletes your account and everything stored with it on our server (your tones, gear, recent songs, practice history and profile) and removes it from your device. For Sign in with Apple, ToneHub also revokes its access at Apple. You can also email <a href="mailto:support@tonehub.app">support@tonehub.app</a> to ask us to delete your account.</li>
+      <li><strong>Signing out</strong> removes your data from the device. It stays in your account until you delete it.</li>
     </ul>
 
     <h2 id="song-details">Song details and amp models</h2>
@@ -125,7 +127,7 @@
     <p>To keep the shared YouTube search fair and within YouTube's limits, ToneHub's server counts requests per network address and per installation of the app. The app sends a random installation ID that isn't linked to you or your account. The server stores only a one-way hash of the network address and of that ID, keeps the counts for up to 2 days, and uses them for rate limiting only. Like most web services, our hosting provider may also keep standard request logs for a short time for security.</p>
 
     <h2 id="device">Data stored on your device</h2>
-    <p>ToneHub keeps your settings, gear, saved tones and caches (such as search results) on your iPhone. Deleting the app removes them.</p>
+    <p>ToneHub keeps your settings and caches (such as search results) on your iPhone, along with a working copy of your saved tones, gear, recent songs and practice so the app works offline. Deleting the app removes the copy on your device; your account keeps the synced data until you delete your account.</p>
 
     <h2 id="sharing">Sharing</h2>
     <p>We share information only with the services described above, as needed to provide the feature you use, or when required by law. We do not sell or rent personal information, and we don't allow third parties to serve ads in ToneHub.</p>
@@ -136,7 +138,7 @@
     <h2 id="choices">Your choices</h2>
     <ul>
       <li>Turn off microphone or Apple Music access at any time in the iOS Settings app.</li>
-      <li>Use the app without an account, or delete your account in the app.</li>
+      <li>Delete your account and its data in the app (Settings › Account › Delete account), or by emailing us.</li>
       <li>Ask us to delete any data related to you by contacting us at the address below.</li>
     </ul>
 
