@@ -1,4 +1,5 @@
-// Feature carousel: native scroll-snap for touch; arrows, dots, chips and arrow keys on top. No autoplay.
+// Feature carousel, paged: 1 slide per page on phones, 2 on tablets, 3 on desktop (set in CSS via --per).
+// Native scroll-snap for touch; arrows, dots (one per page), chips and arrow keys on top. No autoplay.
 (function () {
   var root = document.querySelector('.carousel');
   if (!root) return;
@@ -10,46 +11,62 @@
   var status = document.getElementById('car-status');
   var chips = Array.prototype.slice.call(document.querySelectorAll('.car-chips button'));
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var current = 0;
+  var N = slides.length;
+  var per = 1;       // slides per page
+  var first = 0;     // index of the first visible slide
+  var dots = [];
 
   function title(i) { return slides[i].querySelector('h3').textContent; }
+  function readPer() { return Math.max(1, parseInt(getComputedStyle(root).getPropertyValue('--per'), 10) || 1); }
+  function lastFirst() { return Math.max(0, N - per); }
+  function pages() { return Math.ceil(N / per); }
+  function pageStart(p) { return Math.min(p * per, lastFirst()); }
+  function pageOf(i) { return i >= lastFirst() ? pages() - 1 : Math.round(i / per); }
+  function pad() { return parseFloat(getComputedStyle(track).scrollPaddingLeft) || 0; }
 
-  var dots = slides.map(function (s, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('aria-label', title(i));
-    b.addEventListener('click', function () { go(i, true); });
-    dotsBox.appendChild(b);
-    return b;
-  });
-
-  function edge() { return parseFloat(getComputedStyle(track).paddingLeft) || 0; }
-  function maxScroll() { return track.scrollWidth - track.clientWidth; }
-
-  function go(i, announce) {
-    i = Math.max(0, Math.min(slides.length - 1, i));
-    var left = Math.min(slides[i].offsetLeft - edge(), maxScroll());
-    track.scrollTo({ left: left, behavior: reduce.matches ? 'auto' : 'smooth' });
-    setCurrent(i);
-    if (announce) status.textContent = 'Slide ' + (i + 1) + ' of ' + slides.length + ': ' + title(i);
+  function buildDots() {
+    dotsBox.textContent = '';
+    dots = [];
+    for (var p = 0; p < pages(); p++) {
+      var s = pageStart(p), e = Math.min(N, s + per);
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', per === 1 ? title(s) : 'Slides ' + (s + 1) + ' to ' + e);
+      b.addEventListener('click', (function (s) { return function () { go(s, true); }; })(s));
+      dotsBox.appendChild(b);
+      dots.push(b);
+    }
   }
 
-  function setCurrent(i) {
-    current = i;
-    dots.forEach(function (d, k) { d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+  function go(i, announce) {
+    i = Math.max(0, Math.min(lastFirst(), i));
+    track.scrollTo({ left: slides[i].offsetLeft - pad(), behavior: reduce.matches ? 'auto' : 'smooth' });
+    setFirst(i);
+    if (announce) {
+      var e = Math.min(N, i + per);
+      var names = [];
+      for (var k = i; k < e; k++) names.push(title(k));
+      status.textContent = (per === 1 ? 'Slide ' + (i + 1) : 'Slides ' + (i + 1) + ' to ' + e) + ' of ' + N + ': ' + names.join(', ');
+    }
+  }
+
+  function setFirst(i) {
+    first = i;
+    var p = pageOf(i);
+    dots.forEach(function (d, k) { d.setAttribute('aria-current', k === p ? 'true' : 'false'); });
     var group = slides[i].getAttribute('data-group');
     chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-jump') === group ? 'true' : 'false'); });
-    prev.disabled = i === 0;
-    next.disabled = i === slides.length - 1;
+    prev.disabled = i <= 0;
+    next.disabled = i >= lastFirst();
   }
 
   function nearest() {
-    var x = track.scrollLeft + edge(), best = 0, dist = Infinity;
+    var x = track.scrollLeft + pad(), best = 0, dist = Infinity;
     slides.forEach(function (s, k) {
       var d = Math.abs(s.offsetLeft - x);
       if (d < dist) { dist = d; best = k; }
     });
-    return best;
+    return Math.min(best, lastFirst());
   }
 
   var ticking = false;
@@ -58,19 +75,16 @@
     ticking = true;
     requestAnimationFrame(function () {
       ticking = false;
-      // At the far end the last few slides can't reach the start edge: keep a slide picked
-      // there with a dot or arrow, otherwise mark the last one.
-      var n = nearest();
-      var i = track.scrollLeft >= maxScroll() - 2 ? (current >= n ? current : slides.length - 1) : n;
-      if (i !== current) setCurrent(i);
+      var i = nearest();
+      if (i !== first) setFirst(i);
     });
   }, { passive: true });
 
-  prev.addEventListener('click', function () { go(current - 1, true); });
-  next.addEventListener('click', function () { go(current + 1, true); });
+  prev.addEventListener('click', function () { go(first - per, true); });
+  next.addEventListener('click', function () { go(first + per, true); });
 
   track.addEventListener('keydown', function (e) {
-    var map = { ArrowRight: current + 1, ArrowLeft: current - 1, Home: 0, End: slides.length - 1 };
+    var map = { ArrowRight: first + per, ArrowLeft: first - per, Home: 0, End: lastFirst() };
     if (!(e.key in map)) return;
     e.preventDefault();
     go(map[e.key], true);
@@ -79,11 +93,20 @@
   chips.forEach(function (c) {
     c.addEventListener('click', function () {
       var g = c.getAttribute('data-jump');
-      for (var k = 0; k < slides.length; k++) {
+      for (var k = 0; k < N; k++) {
         if (slides[k].getAttribute('data-group') === g) { go(k, true); break; }
       }
     });
   });
 
-  setCurrent(0);
+  function layout() {
+    var p = readPer();
+    if (p === per && dots.length) return;
+    per = p;
+    buildDots();
+    go(Math.min(first, lastFirst()), false);
+  }
+  var rt;
+  window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(layout, 120); });
+  layout();
 })();

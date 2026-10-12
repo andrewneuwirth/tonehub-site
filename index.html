@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=e58ae665">
+<link rel="stylesheet" href="assets/site.css?v=42f964b2">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"ToneHub","operatingSystem":"iOS","applicationCategory":"MusicApplication","description":"A guitar app for iPhone. Get the tone. Learn the song.","url":"https://tonehub.app/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
@@ -84,93 +84,139 @@
         <li><button type="button" data-jump="play" aria-pressed="false">Play</button></li>
         <li><button type="button" data-jump="practice" aria-pressed="false">Practice</button></li>
       </ul>
+      <div class="carousel" role="region" aria-roledescription="carousel" aria-label="ToneHub features">
+        <ul class="car-track" tabindex="0" aria-label="Features. Use the arrow keys to move between slides.">
+          <li class="slide" id="f-songs" data-group="match" role="group" aria-roledescription="slide" aria-label="1 of 15: What&#39;s playing?">
+            <div class="phone"><img src="assets/shots/songs.webp" width="600" height="1184"  alt="The Songs screen: a What's playing? card to listen and match a tone, a Use a file link, and a search field for songs or YouTube."></div>
+            <h3>What's playing?</h3>
+            <p>Let it listen, or use a file.</p>
+          </li>
+          <li class="slide" id="f-listen" data-group="match" role="group" aria-roledescription="slide" aria-label="2 of 15: Just let it listen">
+            <div class="phone"><img src="assets/shots/listen.webp" width="600" height="1184"  alt="The listen screen: play the song on a speaker and hold the phone near it, with a Start listening button."></div>
+            <h3>Just let it listen</h3>
+            <p>Hold your phone near the speaker.</p>
+          </li>
+          <li class="slide" id="f-result" data-group="match" role="group" aria-roledescription="slide" aria-label="3 of 15: Your amp, dialed in">
+            <div class="phone"><img src="assets/shots/result.webp" width="600" height="1184"  alt="A match result: Gain 7.5, Bass 6, Mid 4.5 and Treble 6.5, a Close match badge, Hear it, and What we heard versus Your tone."></div>
+            <h3>Your amp, dialed in</h3>
+            <p>Settings in your amp's own knobs.</p>
+          </li>
+          <li class="slide" id="f-song" data-group="learn" role="group" aria-roledescription="slide" aria-label="4 of 15: One page per song">
+            <div class="phone"><img src="assets/shots/song.webp" width="600" height="1184"  alt="A song page for Everlong with a preview, Match this song, Practice, and Tuner, Key and Tabs rows."></div>
+            <h3>One page per song</h3>
+            <p>Tuning, key, tempo and tabs.</p>
+          </li>
+          <li class="slide" id="f-playalong" data-group="learn" role="group" aria-roledescription="slide" aria-label="5 of 15: Play along, slow it down">
+            <div class="phone"><img src="assets/shots/playalong.webp" width="600" height="1184" loading="lazy" alt="Practice mode with the song's YouTube video, Loop a part, and speed buttons for 0.5×, 0.75× and 1×."></div>
+            <h3>Play along, slow it down</h3>
+            <p>Loop a part at 0.5× or 0.75×.</p>
+          </li>
+          <li class="slide" id="f-tabs" data-group="learn" role="group" aria-roledescription="slide" aria-label="6 of 15: Tabs in one tap">
+            <div class="phone"><img src="assets/shots/tabs.webp" width="600" height="1184" loading="lazy" alt="The Tabs sheet with Songsterr, Ultimate Guitar and a YouTube guitar lesson."></div>
+            <h3>Tabs in one tap</h3>
+            <p>Songsterr, Ultimate Guitar and lessons.</p>
+          </li>
+          <li class="slide" id="f-play" data-group="play" role="group" aria-roledescription="slide" aria-label="7 of 15: Plug in and play">
+            <div class="phone"><img src="assets/shots/play.webp" width="600" height="1184" loading="lazy" alt="The Play screen: ToneHub's amp set to Clean with Gain, Bass, Mid and Treble knobs, plus Tuner and Effects."></div>
+            <h3>Plug in and play</h3>
+            <p>A real amp, right on your iPhone.</p>
+          </li>
+          <li class="slide" id="f-effects" data-group="play" role="group" aria-roledescription="slide" aria-label="8 of 15: A full pedalboard">
+            <div class="phone"><img src="assets/shots/effects.webp" width="600" height="1184" loading="lazy" alt="The Effects screen with presets on top and Compressor and Chorus switched on, each with its own knobs."></div>
+            <h3>A full pedalboard</h3>
+            <p>Compressor, drive, chorus, delay, reverb.</p>
+          </li>
+          <li class="slide" id="f-tuner" data-group="practice" role="group" aria-roledescription="slide" aria-label="9 of 15: Tune up fast">
+            <div class="phone"><img src="assets/shots/tuner.webp" width="600" height="1184" loading="lazy" alt="The tuner in standard tuning, with Capo and Strobe options, a needle gauge and the six strings."></div>
+            <h3>Tune up fast</h3>
+            <p>Strobe, capo and alternate tunings.</p>
+          </li>
+          <li class="slide" id="f-metronome" data-group="practice" role="group" aria-roledescription="slide" aria-label="10 of 15: Keep perfect time">
+            <div class="phone"><img src="assets/shots/metronome.webp" width="600" height="1184" loading="lazy" alt="The metronome at 120 BPM with four beats, Tap tempo and a Start button."></div>
+            <h3>Keep perfect time</h3>
+            <p>Tap tempo and accents.</p>
+          </li>
+          <li class="slide" id="f-looper" data-group="practice" role="group" aria-roledescription="slide" aria-label="11 of 15: Loop and layer">
+            <div class="phone"><img src="assets/shots/looper.webp" width="600" height="1184" loading="lazy" alt="The Looper: Make a loop, a record button, and a Free or Bars loop length."></div>
+            <h3>Loop and layer</h3>
+            <p>Record a few bars, play over them.</p>
+          </li>
+          <li class="slide" id="f-recorder" data-group="practice" role="group" aria-roledescription="slide" aria-label="12 of 15: Record your takes">
+            <div class="phone"><img src="assets/shots/recorder.webp" width="600" height="1184" loading="lazy" alt="The Recorder with a Plug in to record card and a Connect button."></div>
+            <h3>Record your takes</h3>
+            <p>Every idea, saved.</p>
+          </li>
+          <li class="slide" id="f-fretboard" data-group="practice" role="group" aria-roledescription="slide" aria-label="13 of 15: Learn the fretboard">
+            <div class="phone"><img src="assets/shots/fretboard.webp" width="600" height="1184" loading="lazy" alt="The Fretboard in A minor pentatonic, position 1, with notes on the neck and Listen with the mic."></div>
+            <h3>Learn the fretboard</h3>
+            <p>Scales and shapes, all up the neck.</p>
+          </li>
+          <li class="slide" id="f-ear" data-group="practice" role="group" aria-roledescription="slide" aria-label="14 of 15: Train your ear">
+            <div class="phone"><img src="assets/shots/ear.webp" width="600" height="1184" loading="lazy" alt="Ear training on Intervals: a Play button and answers Major 3rd, 4th, 5th and Octave."></div>
+            <h3>Train your ear</h3>
+            <p>Intervals, chords and keys.</p>
+          </li>
+          <li class="slide" id="f-drills" data-group="practice" role="group" aria-roledescription="slide" aria-label="15 of 15: Technique drills">
+            <div class="phone"><img src="assets/shots/drills.webp" width="600" height="1184" loading="lazy" alt="The Drills list: Alternate picking, Legato, Bends, String skipping and Palm muting."></div>
+            <h3>Technique drills</h3>
+            <p>Picking, legato, bends and more.</p>
+          </li>
+        </ul>
+        <div class="car-nav">
+          <div class="car-dots" role="group" aria-label="Choose a page"></div>
+          <div class="car-arrows">
+            <button type="button" class="car-prev" aria-label="Previous features"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="car-next" aria-label="Next features"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
+        </div>
+        <p class="sr-only" aria-live="polite" id="car-status"></p>
+      </div>
     </div>
-    <div class="carousel" role="region" aria-roledescription="carousel" aria-label="ToneHub features">
-      <ul class="car-track" tabindex="0" aria-label="Features. Use the arrow keys to move between slides.">
-        <li class="slide" id="f-songs" data-group="match" role="group" aria-roledescription="slide" aria-label="1 of 15: What&#39;s playing?">
-          <div class="phone"><img src="assets/shots/songs.webp" width="600" height="1184"  alt="The Songs screen: a What's playing? card to listen and match a tone, a Use a file link, and a search field for songs or YouTube."></div>
-          <h3>What's playing?</h3>
-          <p>Let it listen, or use a file.</p>
-        </li>
-        <li class="slide" id="f-listen" data-group="match" role="group" aria-roledescription="slide" aria-label="2 of 15: Match the exact part">
-          <div class="phone"><img src="assets/shots/listen.webp" width="600" height="1184"  alt="The listen screen: play the song on a speaker and hold the phone near it, with a Start listening button."></div>
-          <h3>Match the exact part</h3>
-          <p>The riff, the verse or the solo.</p>
-        </li>
-        <li class="slide" id="f-result" data-group="match" role="group" aria-roledescription="slide" aria-label="3 of 15: Your amp, dialed in">
-          <div class="phone"><img src="assets/shots/result.webp" width="600" height="1184"  alt="A match result: Gain 7.5, Bass 6, Mid 4.5 and Treble 6.5, a Close match badge, Hear it, and What we heard versus Your tone."></div>
-          <h3>Your amp, dialed in</h3>
-          <p>Settings in your amp's own knobs.</p>
-        </li>
-        <li class="slide" id="f-song" data-group="learn" role="group" aria-roledescription="slide" aria-label="4 of 15: One page per song">
-          <div class="phone"><img src="assets/shots/song.webp" width="600" height="1184"  alt="A song page for Everlong with a preview, Match this song, Practice, and Tuner, Key and Tabs rows."></div>
-          <h3>One page per song</h3>
-          <p>Tuning, key, tempo and tabs.</p>
-        </li>
-        <li class="slide" id="f-playalong" data-group="learn" role="group" aria-roledescription="slide" aria-label="5 of 15: Play along, slow it down">
-          <div class="phone"><img src="assets/shots/playalong.webp" width="600" height="1184" loading="lazy" alt="Practice mode with the song's YouTube video, Loop a part, and speed buttons for 0.5×, 0.75× and 1×."></div>
-          <h3>Play along, slow it down</h3>
-          <p>Loop a part at 0.5× or 0.75×.</p>
-        </li>
-        <li class="slide" id="f-tabs" data-group="learn" role="group" aria-roledescription="slide" aria-label="6 of 15: Tabs in one tap">
-          <div class="phone"><img src="assets/shots/tabs.webp" width="600" height="1184" loading="lazy" alt="The Tabs sheet with Songsterr, Ultimate Guitar and a YouTube guitar lesson."></div>
-          <h3>Tabs in one tap</h3>
-          <p>Songsterr, Ultimate Guitar and lessons.</p>
-        </li>
-        <li class="slide" id="f-play" data-group="play" role="group" aria-roledescription="slide" aria-label="7 of 15: Plug in and play">
-          <div class="phone"><img src="assets/shots/play.webp" width="600" height="1184" loading="lazy" alt="The Play screen: ToneHub's amp set to Clean with Gain, Bass, Mid and Treble knobs, plus Tuner and Effects."></div>
-          <h3>Plug in and play</h3>
-          <p>A real amp, right on your iPhone.</p>
-        </li>
-        <li class="slide" id="f-effects" data-group="play" role="group" aria-roledescription="slide" aria-label="8 of 15: A full pedalboard">
-          <div class="phone"><img src="assets/shots/effects.webp" width="600" height="1184" loading="lazy" alt="The Effects screen with presets on top and Compressor and Chorus switched on, each with its own knobs."></div>
-          <h3>A full pedalboard</h3>
-          <p>Compressor, drive, chorus, delay, reverb.</p>
-        </li>
-        <li class="slide" id="f-tuner" data-group="practice" role="group" aria-roledescription="slide" aria-label="9 of 15: Tune up fast">
-          <div class="phone"><img src="assets/shots/tuner.webp" width="600" height="1184" loading="lazy" alt="The tuner in standard tuning, with Capo and Strobe options, a needle gauge and the six strings."></div>
-          <h3>Tune up fast</h3>
-          <p>Strobe, capo and alternate tunings.</p>
-        </li>
-        <li class="slide" id="f-metronome" data-group="practice" role="group" aria-roledescription="slide" aria-label="10 of 15: Keep perfect time">
-          <div class="phone"><img src="assets/shots/metronome.webp" width="600" height="1184" loading="lazy" alt="The metronome at 120 BPM with four beats, Tap tempo and a Start button."></div>
-          <h3>Keep perfect time</h3>
-          <p>Tap tempo and accents.</p>
-        </li>
-        <li class="slide" id="f-looper" data-group="practice" role="group" aria-roledescription="slide" aria-label="11 of 15: Loop and layer">
-          <div class="phone"><img src="assets/shots/looper.webp" width="600" height="1184" loading="lazy" alt="The Looper: Make a loop, a record button, and a Free or Bars loop length."></div>
-          <h3>Loop and layer</h3>
-          <p>Record a few bars, play over them.</p>
-        </li>
-        <li class="slide" id="f-recorder" data-group="practice" role="group" aria-roledescription="slide" aria-label="12 of 15: Record your takes">
-          <div class="phone"><img src="assets/shots/recorder.webp" width="600" height="1184" loading="lazy" alt="The Recorder with a Plug in to record card and a Connect button."></div>
-          <h3>Record your takes</h3>
-          <p>Every idea, saved.</p>
-        </li>
-        <li class="slide" id="f-fretboard" data-group="practice" role="group" aria-roledescription="slide" aria-label="13 of 15: Learn the fretboard">
-          <div class="phone"><img src="assets/shots/fretboard.webp" width="600" height="1184" loading="lazy" alt="The Fretboard in A minor pentatonic, position 1, with notes on the neck and Listen with the mic."></div>
-          <h3>Learn the fretboard</h3>
-          <p>Scales and shapes, all up the neck.</p>
-        </li>
-        <li class="slide" id="f-ear" data-group="practice" role="group" aria-roledescription="slide" aria-label="14 of 15: Train your ear">
-          <div class="phone"><img src="assets/shots/ear.webp" width="600" height="1184" loading="lazy" alt="Ear training on Intervals: a Play button and answers Major 3rd, 4th, 5th and Octave."></div>
-          <h3>Train your ear</h3>
-          <p>Intervals, chords and keys.</p>
-        </li>
-        <li class="slide" id="f-drills" data-group="practice" role="group" aria-roledescription="slide" aria-label="15 of 15: Technique drills">
-          <div class="phone"><img src="assets/shots/drills.webp" width="600" height="1184" loading="lazy" alt="The Drills list: Alternate picking, Legato, Bends, String skipping and Palm muting."></div>
-          <h3>Technique drills</h3>
-          <p>Picking, legato, bends and more.</p>
-        </li>
-      </ul>
-      <div class="wrap car-nav">
-        <div class="car-dots" role="group" aria-label="Choose a slide"></div>
-        <div class="car-arrows">
-          <button type="button" class="car-prev" aria-label="Previous feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-          <button type="button" class="car-next" aria-label="Next feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  </section>
+
+  <section class="how" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="how-grid">
+        <div>
+          <div class="section-head">
+            <h2 id="how-title">How Match works</h2>
+            <p>Three steps from song to sound.</p>
+          </div>
+          <ol class="steps">
+            <li>
+              <span class="tile teal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="12" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5v4"/></svg></span>
+              <div><h3><span class="num">1</span>Play it</h3><p>Let it listen, or trim a file to the part.</p></div>
+            </li>
+            <li>
+              <span class="tile teal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 7v10M21 12h0"/></svg></span>
+              <div><h3><span class="num">2</span>Match it</h3><p>ToneHub hears the tone and finds the settings.</p></div>
+            </li>
+            <li>
+              <span class="tile teal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="m12 13 3.5-4M5 21h14"/></svg></span>
+              <div><h3><span class="num">3</span>Play it on your amp</h3><p>Set your amp's own knobs and play.</p></div>
+            </li>
+          </ol>
+        </div>
+        <div class="how-art">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <div class="phone">
+            <img src="assets/shots/result.webp" width="600" height="1184" loading="lazy" alt="A match result for Everlong: Gain 7.5, Bass 6, Mid 4.5 and Treble 6.5 with a Close match badge.">
+          </div>
         </div>
       </div>
-      <p class="sr-only" aria-live="polite" id="car-status"></p>
+    </div>
+  </section>
+
+  <section class="free" aria-labelledby="free-title">
+    <div class="wrap">
+      <div class="free-band">
+        <h2 id="free-title">Free forever. <span>No ads, ever.</span></h2>
+        <ul class="free-points">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>No ads</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Nothing to unlock</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Every feature included</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -225,6 +271,6 @@
     window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
   })();
 </script>
-<script src="assets/carousel.js?v=e58ae665" defer></script>
+<script src="assets/carousel.js?v=42f964b2" defer></script>
 </body>
 </html>
