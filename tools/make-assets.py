@@ -1,26 +1,13 @@
-# Regenerates assets/shots and assets/brand (icons, favicons, OG image) from the app repo.
-# Screenshots: light-mode captures from the current app build (iPhone 17 Pro simulator, headless simctl,
-# `-hasCompletedOnboarding YES -screen=<name>`, see app/GtrTone/Screens/Root/DebugLaunch.swift),
-# saved as app/build/shots-site/<screen>.png in gtr-tone-app.
+# Regenerates assets/brand (icons, favicons, OG image) from the app repo.
+# Screenshots (assets/shots) are made by gtr-tone-app's tools/site-shots.sh: it builds the app,
+# captures each screen on a headless iPhone 17 Pro simulator into app/build/shots-site/<screen>.png,
+# and frames them in an iPhone bezel (tools/site-shots/frame.py). The OG image below reuses songs.png.
 # To swap the logo: replace design/icon/tonehub-icon-source.jpg in gtr-tone-app (square, 1024px+) and run: python3 tools/make-assets.py
-import os, glob
+import os
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 A=os.path.expanduser('~/Developer/gtr-tone-app/')
 S=A+'app/build/shots-site/'
 D=os.path.expanduser('~/Developer/tonehub-site/assets/')
-# site name -> -screen= capture
-shots={
- 'songs':'songs','listen':'listen','result':'result-preview','song':'song','playalong':'practicesong',
- 'tabs':'song-tabs','play':'play','effects':'effects-on','tuner':'tuner','metronome':'metronome',
- 'looper':'looper','recorder':'recorder','fretboard':'fretboard-practice','ear':'ear','drills':'drills','plan':'plan',
-}
-for old in glob.glob(D+'shots/*.webp'): os.remove(old)
-CROP=2380  # drop the tab bar
-for k,p in shots.items():
-    im=Image.open(S+p+'.png').convert('RGB')
-    w,h=im.size; c=round(CROP*w/1206)
-    im=im.crop((0,0,w,c)).resize((600,round(CROP*600/1206)),Image.LANCZOS)
-    im.save(D+'shots/'+k+'.webp','WEBP',quality=80,method=6)
 src=Image.open(A+'design/icon/tonehub-icon-source.jpg').convert('RGB')
 def rounded(im,r):
     m=Image.new('L',im.size,0); ImageDraw.Draw(m).rounded_rectangle((0,0,im.size[0]-1,im.size[1]-1),r,fill=255)
