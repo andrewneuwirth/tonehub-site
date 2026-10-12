@@ -103,6 +103,7 @@
     <ul>
       <li>If you allow it, ToneHub uses Apple's MusicKit to search the Apple Music catalog, check whether you can play full songs, and play songs inside the app. iOS asks for your permission first, and you can change it any time in Settings.</li>
       <li>These requests go directly from your device to Apple. ToneHub does not receive your Apple ID, your listening history or your library. Apple's handling is covered by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
+      <li>To show a song's mode (for example Dorian instead of minor), the app may download the song's 30-second preview over Wi-Fi and analyze its notes on your device. The preview is deleted right after, and nothing from it is uploaded; only the detected key is kept with your song details.</li>
     </ul>
 
     <h2 id="account">Your account</h2>
@@ -120,6 +121,7 @@
       <li><strong>MusicBrainz</strong> (<a href="https://musicbrainz.org">musicbrainz.org</a>): song searches send the search words to identify recordings.</li>
       <li><strong>GetSongBPM</strong> (<a href="https://getsongbpm.com">getsongbpm.com</a>): a song's title and artist are sent to look up its key and tempo.</li>
       <li><strong>TONE3000</strong> (<a href="https://www.tone3000.com">tone3000.com</a>): if you connect a TONE3000 account under Play › More amps, you sign in on TONE3000's site, and ToneHub uses that sign-in only to list and download amp models you choose. Your TONE3000 password never passes through ToneHub. TONE3000's own privacy policy applies to that account.</li>
+      <li><strong>Original rig research</strong>: when you open a song, ToneHub's server may look up the gear used on its original recording. The app sends the song's title, artist and Apple Music ID to our server with your sign-in token. If the song hasn't been researched yet, our server sends only the title and artist to OpenAI (<a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a>), which searches the web and returns the amp, guitar and sources. The answer is stored on our server and shown to everyone who opens that song. Your account details are never sent to OpenAI; our server counts research requests per account, as a one-way hash, to limit use.</li>
     </ul>
     <p>These lookups don't include your name, email or account details.</p>
 
